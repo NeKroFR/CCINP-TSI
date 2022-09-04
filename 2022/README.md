@@ -17,3 +17,5 @@
 
 <h2 style="text-align:center; text-decoration: underline">Partie III ­ Module Folium
 </h2>
+
+<strong>Q8/Q9/Q10.</strong> voir [code](/2022/src/main.py)

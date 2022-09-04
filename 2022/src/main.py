@@ -58,9 +58,29 @@ def listeAvantMidi(liste):
             avantmidi.append(i)
     return avantmidi
 
+def carteVide(centre):
+    map =folium.Map(centre,zoom_start=20)
+    return map
 
+def transfertTocarte(carte, image, popupPassé):
+    folium.Marker(imageToGpsPoint(image),popup=popupPassé).add_to(carte)
+    return carte
 
+def transfertListeTocarte(centre, listePhotos):
+    c = carteVide(centre)
+    for i in listePhotos:
+        transfertTocarte(c, i, coupeExtension(i))
+    return c
 
+    
 my_image = openImage("photo.jpg")
 photo_liste = ["photo.jpg"]
 
+point = imageToGpsPoint(my_image)
+map = carteVide(point)
+transfertTocarte(map, my_image, "popup")
+
+
+""""
+Q11
+"""
